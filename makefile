@@ -9,6 +9,7 @@ UBSAN_FLAGS := -fsanitize=${UBSAN_CHECKS} -fsanitize-minimal-runtime -fsanitize-
 
 CFLAGS += -fPIC -Werror -Weverything -Wno-disabled-macro-expansion -Wno-padded -Wno-unused-macros -Wno-declaration-after-statement
 CFLAGS += -Wno-reserved-id-macro -Wno-documentation-deprecated-sync
+CFLAGS += -enable-trivial-auto-var-init-zero-knowing-it-will-be-removed-from-clang -ftrivial-auto-var-init=zero
 CFLAGS += ${UBSAN_FLAGS}
 CFLAGS += -I/usr/local/include
 LDFLAGS += -L/usr/local/lib
