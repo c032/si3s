@@ -75,7 +75,10 @@ static enum battery_percentage_error battery_percentage_get(int *percentage) {
 	}
 
 	char *read_result = fgets(raw_percentage, BATTERY_PERCENTAGE_PARSING_BUFFER_SIZE, f);
+
 	fclose(f);
+	f = NULL;
+
 	if (read_result == NULL) {
 		return battery_percentage_error_read;
 	}
